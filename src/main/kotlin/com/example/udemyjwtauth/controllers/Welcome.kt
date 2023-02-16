@@ -20,25 +20,30 @@ class Welcome(
 ) {
 
 
-    private fun mapToDto(user: User):UserDto{
-       return UserDto(
-           user.id,
-           user.name,
-           user.email,
-           user.username,
-       )
+    private fun mapToDto(user: User): UserDto {
+        return UserDto(
+            user.id,
+            user.name,
+            user.email,
+            user.username,
+        )
     }
 
 
     @CrossOrigin(origins = ["http://localhost:3000/"])
     @GetMapping("users")
     fun getUsers(): ResponseEntity<MutableList<UserDto>> {
-        val users =  userService.getAllUsers()
+        val users = userService.getAllUsers()
             .stream()
-            .map {
-                    user->mapToDto(user)
+            .map { user ->
+                mapToDto(user)
             }
             .collect(Collectors.toList())
         return ResponseEntity.ok(users)
+    }
+
+    @GetMapping("users/{id}")
+    fun getUserById(@PathVariable id: Long): User {
+        return userService.getUserById(id)
     }
 }

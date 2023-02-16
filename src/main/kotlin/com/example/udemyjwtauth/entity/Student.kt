@@ -22,8 +22,15 @@ open class Student(
    open var age:String,
 ) {
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToMany
+    @JoinTable(
+        name = "guardian_students",
+        joinColumns = [JoinColumn(name = "guardian_id")],
+        inverseJoinColumns = [JoinColumn(name = "student_id")]
+    )
+    open var guardian:MutableList<Guardian>? = null
+    /*@ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "guardian_id", nullable = false)
-    open lateinit var guardian: Guardian
+    open lateinit var guardian: Guardian*/
     constructor() : this(1,"","","")
 }

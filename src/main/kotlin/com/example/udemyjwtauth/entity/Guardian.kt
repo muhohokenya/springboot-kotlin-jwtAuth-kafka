@@ -2,6 +2,7 @@ package com.example.udemyjwtauth.entity
 
 import jakarta.persistence.*
 
+
 @Entity
 @Table(name = "guardians")
 open class Guardian (
@@ -16,11 +17,14 @@ open class Guardian (
 
     @Column(name = "contacts", nullable = false, unique = true)
     open var contacts:String,
+
+
+    @ManyToMany(mappedBy = "guardian")
+    open val students: MutableList<Student>? = null
 ){
 
 
-//    @OneToMany(mappedBy = "guardian")
-//    open var student =
-    constructor() : this(1,"","")
+
+    constructor() : this(1,"","",null)
 
 }

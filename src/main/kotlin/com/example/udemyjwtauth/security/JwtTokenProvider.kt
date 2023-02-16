@@ -2,6 +2,8 @@ package com.example.udemyjwtauth.security
 
 import com.sun.nio.sctp.IllegalReceiveException
 import io.jsonwebtoken.ExpiredJwtException
+import io.jsonwebtoken.Header
+import io.jsonwebtoken.JwtException
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.MalformedJwtException
 import io.jsonwebtoken.UnsupportedJwtException
@@ -10,8 +12,11 @@ import io.jsonwebtoken.security.Keys
 import io.jsonwebtoken.security.SignatureException
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.cache.interceptor.CacheOperationInvoker.ThrowableWrapper
+import org.springframework.http.HttpStatus
+import org.springframework.http.ResponseEntity
 import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Component
+import org.springframework.web.bind.annotation.ExceptionHandler
 import java.security.Key
 import java.util.Base64.Decoder
 import java.util.Date
@@ -48,7 +53,7 @@ class JwtTokenProvider {
         return claims.subject
     }
 
-    @Throws(SignatureException::class)
+//    @Throws(SignatureException::class)
     fun validateToken(token:String): Boolean {
         try {
             Jwts.parserBuilder()
@@ -58,16 +63,29 @@ class JwtTokenProvider {
                 .body
             return true
         } catch (e: MalformedJwtException) {
-//            TODO("Not yet implemented")
+            handleMalformedJwtException()
             return false
         }catch (expired:ExpiredJwtException){
-            return false
-            // TODO: To be implemented 
+         return false
         }catch (unsupported:UnsupportedJwtException){
-            TODO("Not yet implemented")
+            handleUnsupportedJwtException()
+            return false
         }catch (illegal:IllegalReceiveException){
-            TODO("Not yet implemented")
+            throw IllegalReceiveException("Error with the token")
+        }catch (e:JwtException){
+            println(e)
+            return false
         }
+    }
+
+    @ExceptionHandler(UnsupportedJwtException::class)
+    fun handleUnsupportedJwtException():ResponseEntity<Any>{
+        return ResponseEntity(HttpStatus.UNAUTHORIZED)
+    }
+
+    @ExceptionHandler(MalformedJwtException::class)
+    fun handleMalformedJwtException():ResponseEntity<Any>{
+        return ResponseEntity(HttpStatus.BAD_REQUEST)
     }
 
     private fun key(): Key {

@@ -1,8 +1,10 @@
 package com.example.udemyjwtauth.controllers
 
 import com.example.udemyjwtauth.dto.GuardianDto
+import com.example.udemyjwtauth.entity.Guardian
 import com.example.udemyjwtauth.service.GuardianService
 import org.springframework.http.ResponseEntity
+import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
@@ -14,6 +16,10 @@ class GuardianController(
     private val guardianService: GuardianService
 ) {
 
+    @GetMapping("")
+    fun getGuardians():MutableList<Guardian>{
+        return guardianService.getAllGuardians()
+    }
 
     @PostMapping("/save")
     fun createGuardian(@RequestBody guardianDto: GuardianDto):ResponseEntity<Any>{

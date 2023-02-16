@@ -5,7 +5,6 @@ import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.context.SecurityContextHolder
-import org.springframework.security.core.userdetails.UserDetails
 import org.springframework.security.core.userdetails.UserDetailsService
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource
 import org.springframework.stereotype.Component
@@ -22,7 +21,7 @@ class JwtAuthenticationFilter(
         response: HttpServletResponse,
         filterChain: FilterChain
     ) {
-        val token = getUserNameFromToken(request);
+        val token = getUserNameFromToken(request)
 
         if (StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)) {
             val username = jwtTokenProvider.getUserName(token)
@@ -47,6 +46,6 @@ class JwtAuthenticationFilter(
         if(StringUtils.hasText(bearer) &&  bearer.startsWith("Bearer ")) {
             return bearer.substring(7, bearer.length)
         }
-        return ""
+        return "Error"
     }
 }

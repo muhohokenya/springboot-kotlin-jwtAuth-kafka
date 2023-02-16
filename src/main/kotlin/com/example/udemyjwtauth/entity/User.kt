@@ -2,25 +2,30 @@ package com.example.udemyjwtauth.entity
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import jakarta.persistence.*
+import jakarta.validation.constraints.NotEmpty
+import jakarta.validation.constraints.NotNull
 
 @Entity
 @Table(name = "users")
-data class User (
+open class User (
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id:Long,
+    open val id:Long,
+
 
     @Column(name = "email", nullable = false)
-    val email:String,
+    open val email:String,
 
     @Column(name = "name", nullable = false, unique = true)
-    val name:String,
+    open val name:String,
 
+    @NotNull
     @Column(name = "password", nullable = false)
-    val password:String,
+    open val password:String,
 
+    @NotNull
     @Column(name = "username", nullable = false)
-    val username:String,
+    open val username:String,
 ) {
     @JoinTable(
         name = "user_roles",
@@ -32,7 +37,7 @@ data class User (
         cascade = [CascadeType.PERSIST]
     )
     @JsonIgnoreProperties("users")
-    var roles:MutableList<Role> = mutableListOf()
+    open var roles:MutableList<Role> = mutableListOf()
     constructor() : this(1,"","","","")
 
 

@@ -4,5 +4,5 @@ import com.example.udemyjwtauth.dto.StudentDto
 
 interface StudentServiceInterface {
 
-    fun updateStudent(studentDto: StudentDto,id :Long):StudentDto
+//    fun updateStudent(studentDto: StudentDto,id :Long):StudentDto
 }

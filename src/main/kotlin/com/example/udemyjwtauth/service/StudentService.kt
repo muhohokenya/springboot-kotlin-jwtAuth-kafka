@@ -25,17 +25,17 @@ class StudentService(
         return studentRepository.findById(id).orElseThrow { error("Student Not Found") }
     }
 
-    private fun mapToDto(student: Student): StudentDto {
+    /*private fun mapToDto(student: Student): StudentDto {
         return StudentDto(
             student.id,
             student.name,
             student.age,
             student.admNo,
-            student.guardian,
+            student.guardian
         )
-    }
+    }*/
 
-    override fun updateStudent(studentDto: StudentDto,id: Long):StudentDto {
+    /*override fun updateStudent(studentDto: StudentDto,id: Long):StudentDto {
         val student = Student(
             id,
             studentDto.name,
@@ -44,5 +44,5 @@ class StudentService(
         )
         studentRepository.save(student)
         return mapToDto(student)
-    }
+    }*/
 }
