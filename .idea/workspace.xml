@@ -5,13 +5,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6a4ec198-7ec6-4ab1-9a59-34815f985cc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/configs/KafkaConsumer.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/configs/KafkaTopicConfig.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/kafka/KafkaConsumerController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/kafka/KafkaProducerController.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/KafkaRequest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/exception/GlobalExceptionHandler.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/kafka/KafkaProducer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/CustomerController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/EmployeeController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/FedexTrackController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/IssTrackController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/UpsTrackController.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/CustomerDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/EarthQuakeDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/EmployeeDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/FedexTokenRequest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/IssDTO.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/OrderDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/UpsResponseDto.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Address.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Customer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/EarthQuake.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Employee.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/IssTracking.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Order.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/events/GenericEventHandler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/AddressRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/CustomerRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/EarthQuakeRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/EmployeeRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/IssTrackingRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/OrderRepository.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/schedules/IssScheduler.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/CustomerService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/EarthQuakeService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/IssTrackingService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/KafkaConsumer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/OrderService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/employee/EmployeeService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/kafka/KafkaProducer.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" afterDir="false" />
@@ -22,27 +48,28 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/b3f1fa3a-daa9-42db-b7e7-a8fcbe9103ea.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/b3f1fa3a-daa9-42db-b7e7-a8fcbe9103ea.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/GuardianController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/GuardianController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/UdemyJwtAuthApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/UdemyJwtAuthApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/UdemyJwtAuthApplicationKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/UdemyJwtAuthApplicationKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/GuardianController.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/StudentsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/StudentsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/Welcome$getUsers$users$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/Welcome$getUsers$users$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/Welcome.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/controllers/Welcome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/dto/RegisterDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/dto/RegisterDto.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/dto/StudentDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/dto/StudentDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/entity/Guardian.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/entity/Guardian.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/entity/Guardian.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/entity/Student.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/entity/Student.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/entity/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/entity/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/repository/UserRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/security/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/security/JwtTokenProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/security/JwtTokenProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/exception/ResourceNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/repository/GuardianRepository.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/security/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/security/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/GuardianService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/GuardianService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/StudentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/StudentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/interfaces/StudentServiceInterface.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/interfaces/StudentServiceInterface.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/GuardianService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/StudentService$getStudentById$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/StudentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/interfaces/GuardianServiceInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/kotlin/main/com/example/udemyjwtauth/service/interfaces/StudentServiceInterface.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/inputs/source-to-output.tab.keystream.len" afterDir="false" />
@@ -71,9 +98,7 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/proto.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab.keystream" afterDir="false" />
@@ -83,10 +108,13 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/source-to-classes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/subtypes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.keystream.len" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab.values.at" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/jvm/kotlin/supertypes.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/counters.tab" afterDir="false" />
@@ -106,32 +134,36 @@
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.keystream.len" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.len" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.len" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.at" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab.values.s" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab_i" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/caches-jvm/lookups/lookups.tab_i" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/cacheable/last-build.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/compileKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileKotlin/local-state/build-history.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/last-build.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/cacheable/last-build.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/local-state/build-history.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/compileTestKotlin/local-state/build-history.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/kotlin/udemyjwtauth001SNAPSHOTplainjar-classes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/kotlin/udemyjwtauth001SNAPSHOTplainjar-classes.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/libs/udemy-jwt-auth-0.0.1-SNAPSHOT-plain.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/udemy-jwt-auth-0.0.1-SNAPSHOT-plain.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/AuthController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/AuthController.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/GuardianController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/GuardianController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/UdemyJwtAuthApplication.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/UdemyJwtAuthApplication.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/configs/KafkaConsumer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/configs/KafkaTopicConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/configs/KafkaTopicConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/GuardianController.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/StudentsController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/StudentsController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/Welcome.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/Welcome.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/RegisterDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/RegisterDto.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/kafka/KafkaConsumerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/kafka/KafkaConsumerController.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/kafka/KafkaProducerController.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/kafka/KafkaProducerController.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/StudentDto.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/dto/StudentDto.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Guardian.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Guardian.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Guardian.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Course.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Student.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/Student.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/entity/User.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/UserRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/UserRepository.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/security/JwtAuthenticationFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/security/JwtAuthenticationFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/security/JwtTokenProvider.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/security/JwtTokenProvider.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/exception/GlobalExceptionHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/exception/GlobalExceptionHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/exception/ResourceNotFoundException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/kafka/KafkaProducer.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/GuardianRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/repository/GuardianRepository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/security/SecurityConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/security/SecurityConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/GuardianService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/GuardianService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/StudentService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/StudentService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/UserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/interfaces/StudentServiceInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/interfaces/StudentServiceInterface.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/GuardianService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/StudentService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/StudentService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/interfaces/GuardianServiceInterface.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/interfaces/StudentServiceInterface.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/services/interfaces/StudentServiceInterface.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -149,17 +181,16 @@
       <list>
         <option value="com.haulmont.jpb.JpaEntity" />
         <option value="com.haulmont.jpb.JpaRepository" />
-        <option value="Kotlin Interface" />
         <option value="Class" />
-        <option value="Kotlin Data Class" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
+        <option value="Kotlin Data Class" />
       </list>
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/6.0.3/10abed72688a3016f569f509f69939445a31f8d0/spring-web-6.0.3-sources.jar!/org/springframework/http/HttpStatus.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/controllers/StudentsController.kt" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/src/main/kotlin/com/example/udemyjwtauth/service/GuardianService.kt" root0="SKIP_INSPECTION" />
   </component>
   <component name="JpbToolWindowState">
     <option name="isDesignerTabSelected" value="false" />
@@ -183,37 +214,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;2afc65f615f9ecbfed0ccb801d7b326b&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "2afc65f615f9ecbfed0ccb801d7b326b",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.example.udemyjwtauth.dto" />
+    </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.example.udemyjwtauth.services" />
       <recent name="com.example.udemyjwtauth.controllers.kafka" />
       <recent name="security" />
     </key>
@@ -287,7 +322,9 @@
       <workItem from="1676355165882" duration="1091000" />
       <workItem from="1676356792393" duration="602000" />
       <workItem from="1676360327782" duration="6073000" />
-      <workItem from="1676528870766" duration="13476000" />
+      <workItem from="1676528870766" duration="54747000" />
+      <workItem from="1676799191583" duration="18787000" />
+      <workItem from="1676987623064" duration="62856000" />
     </task>
     <servers />
   </component>

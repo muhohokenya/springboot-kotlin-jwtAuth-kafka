@@ -2,7 +2,7 @@ package com.example.udemyjwtauth.controllers
 
 import com.example.udemyjwtauth.dto.StudentDto
 import com.example.udemyjwtauth.entity.Student
-import com.example.udemyjwtauth.service.StudentService
+import com.example.udemyjwtauth.services.StudentService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
@@ -28,10 +28,9 @@ class StudentsController(
             null,
             studentDto.name,
             studentDto.admNo,
-            studentDto.age
+            studentDto.age,
         )
-
-        student.guardian?.add(studentDto.guardian)
+        student.courses = studentDto.courses
         return ResponseEntity(studentService.createStudent(student), HttpStatus.CREATED)
     }
 

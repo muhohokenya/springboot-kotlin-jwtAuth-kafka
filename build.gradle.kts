@@ -20,6 +20,7 @@ repositories {
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-security")
     implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
@@ -39,9 +40,15 @@ dependencies {
     implementation("org.springframework.kafka:spring-kafka")
 
     implementation("org.springframework.boot:spring-boot-starter-validation")
-    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
-//    implementation("org.slf4j:slf4j-api:1.7.32")
-//    implementation("org.slf4j:slf4j-simple:1.7.32")
+
+    implementation("com.fasterxml.jackson.core:jackson-databind:2.14.2")
+    implementation("com.launchdarkly:okhttp-eventsource:4.1.0")
+
+
+    implementation("com.squareup.okhttp3:okhttp:4.10.0")
+
+    implementation("com.fasterxml.jackson.core:jackson-core:2.14.2")
+
 }
 
 tasks.withType<KotlinCompile> {

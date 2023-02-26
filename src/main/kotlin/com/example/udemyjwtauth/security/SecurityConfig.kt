@@ -1,8 +1,10 @@
 package com.example.udemyjwtauth.security
 
+import org.slf4j.LoggerFactory
+import org.springframework.beans.factory.InjectionPoint
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
-import org.springframework.http.HttpMethod
+import org.springframework.context.annotation.Scope
 import org.springframework.security.authentication.AuthenticationManager
 import org.springframework.security.config.Customizer
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration
@@ -14,11 +16,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.security.web.SecurityFilterChain
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter
-import org.springframework.web.bind.annotation.CrossOrigin
-import org.springframework.web.cors.CorsConfiguration
-import org.springframework.web.cors.CorsConfigurationSource
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource
-import org.springframework.web.servlet.config.annotation.CorsRegistry
+import java.util.logging.Logger
 
 
 @Configuration
@@ -36,6 +34,13 @@ class SecurityConfig(
     }
 
     @Bean
+    @Scope("prototype")
+    fun produceLogger(injectionPoint: InjectionPoint): org.slf4j.Logger? {
+        val classOnWired = injectionPoint.member.declaringClass
+        return LoggerFactory.getLogger(classOnWired)
+    }
+
+    @Bean
     @Override
     fun authenticationManager(configuration: AuthenticationConfiguration): AuthenticationManager {
         return configuration.authenticationManager
@@ -50,7 +55,7 @@ class SecurityConfig(
             .csrf()
             .disable()
             .authorizeHttpRequests {
-                it.requestMatchers("/api/auth/**","/error/**")
+                it.requestMatchers("/api/auth/**","/api/v1/kafka/**","/error/**")
                     .permitAll()
                     .anyRequest().authenticated()
             }.exceptionHandling { exception ->

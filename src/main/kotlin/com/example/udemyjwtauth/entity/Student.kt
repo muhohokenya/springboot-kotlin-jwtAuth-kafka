@@ -4,7 +4,15 @@ import jakarta.persistence.*
 
 
 @Table(
-    name = "students"
+    name = "students",
+    uniqueConstraints = [
+        UniqueConstraint(
+            name = "admNoUnique",
+            columnNames = [
+                "admNo"
+            ]
+        )
+    ]
 )
 @Entity
 open class Student(
@@ -22,15 +30,12 @@ open class Student(
    open var age:String,
 ) {
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
     @JoinTable(
-        name = "guardian_students",
-        joinColumns = [JoinColumn(name = "guardian_id")],
-        inverseJoinColumns = [JoinColumn(name = "student_id")]
+        name = "student_courses",
+        joinColumns = [JoinColumn(name = "student_id", referencedColumnName = "id")],
+        inverseJoinColumns = [JoinColumn(name = "course_id", referencedColumnName = "id")]
     )
-    open var guardian:MutableList<Guardian>? = null
-    /*@ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "guardian_id", nullable = false)
-    open lateinit var guardian: Guardian*/
+    open var courses:MutableList<Course>? = null
     constructor() : this(1,"","","")
 }

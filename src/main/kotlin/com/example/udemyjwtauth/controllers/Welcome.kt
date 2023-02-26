@@ -1,15 +1,9 @@
 package com.example.udemyjwtauth.controllers
 
-import com.example.udemyjwtauth.dto.StudentDto
 import com.example.udemyjwtauth.dto.UserDto
-import com.example.udemyjwtauth.entity.Student
 import com.example.udemyjwtauth.entity.User
-import com.example.udemyjwtauth.repository.UserRepository
-import com.example.udemyjwtauth.service.StudentService
-import com.example.udemyjwtauth.service.UserService
-import org.springframework.http.HttpStatus
+import com.example.udemyjwtauth.services.UserService
 import org.springframework.http.ResponseEntity
-import org.springframework.security.access.prepost.PreAuthorize
 import org.springframework.web.bind.annotation.*
 import java.util.stream.Collectors
 
